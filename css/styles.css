@@ -1,3 +1,7 @@
+body{
+  background-color: #4542f5!important;
+}
+
 .main {
   display: flex;
 }
@@ -26,8 +30,12 @@
   letter-spacing: 3;
   color: grey;
 }
+.cont{
+  padding: 10px!important;  
+}
 
 .card-content {
+  margin-top: 30px;
   font-size: 20px;
   font-family: Poppins;
   font-weight: 500;
@@ -79,4 +87,24 @@
 #myTable tr:hover {
   /* Add a grey background color to the table header and on hover */
   background-color: #f1f1f1;
+}
+
+.search-input{
+  position: relative;
+  left: 450px;
+}
+
+.search-item{
+  position: relative;
+  left: 455px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(93, 156, 240);
+  border: 0;
+  color: white;
+}
+
+button{
+  border-radius: 50%;
 }
