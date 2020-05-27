@@ -1,3 +1,7 @@
+body{
+  background-color: #4542f5!important;
+}
+
 .main {
   display: flex;
 }
@@ -26,8 +30,12 @@
   letter-spacing: 3;
   color: grey;
 }
+.cont{
+  padding: 10px!important;  
+}
 
 .card-content {
+  margin-top: 30px;
   font-size: 20px;
   font-family: Poppins;
   font-weight: 500;
@@ -47,4 +55,9 @@
 .rank {
   padding-bottom: 10px;
   text-align: center;
+}
+
+.search-input{
+  position: relative;
+  left: 500px;
 }

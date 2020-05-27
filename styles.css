@@ -1,3 +1,7 @@
+body{
+  background-color: #4542f5!important;
+}
+
 .main{
     display: flex;
   }
@@ -44,4 +48,5 @@
     font-weight: 400;
     color: grey;
   }
+  
   
