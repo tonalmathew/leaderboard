@@ -19,7 +19,7 @@
   }
   
   .card-title{
-      text-align: center;
+    text-align: center;
     font-size: 40px;
     font-weight:bold;
     font-family: roboto;
@@ -45,17 +45,3 @@
     color: grey;
   }
   
-  .rank{
-    padding-bottom: 10px;
-    text-align: center;
-  }
-
-  .name{
-    padding-bottom: 10px;
-    text-align: center;
-  }
-
-  .point{
-    padding-bottom: 10px;
-    text-align: center;
-  }

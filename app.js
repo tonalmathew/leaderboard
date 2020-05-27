@@ -1,4 +1,4 @@
-var url = "https://sheet.best/api/sheets/cb49aab6-348f-4bd3-a698-2fd1a3328929";
+var url = "http://gsx2json.com/api?id=1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0&sheet=1";
 
 // AJAX Request
 var leaderBoard = new XMLHttpRequest();
@@ -8,20 +8,21 @@ leaderBoard.send();
 leaderBoard.addEventListener("load", function (e) {
   var data = e.target.response;
   var response = JSON.parse(data);
-  let resultsData = response;
+  let resultsData = response.rows;
 
   resultsData.forEach((result) => {
     console.log(result);
     $(".table-content").append(
-      `<div class="col-lg-2 col-sm-2 col-md-2 col-xl-2 col-2">
-        ${result.Rank}
+      `<div class="col-lg-2 col-sm-2 col-md-2 col-xl-2">
+        ${result.rank}
       </div>
-      <div class="col-lg-7 col-sm-7 col-md-7 col-xl-7 col-7">
-        ${result.Name}
+      <div class="col-lg-7 col-sm-7 col-md-7 col-xl-7">
+        ${result.name}
       </div>
-      <div class="col-lg-3 col-sm-3 col-md-3 col-xl-3 col-3">
-        ${result.Points}
+      <div class="col-lg-3 col-sm-3 col-md-3 col-xl-3">
+        ${result.points}
       </div>`
     );
   });
 });
+
