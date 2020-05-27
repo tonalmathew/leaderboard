@@ -21,7 +21,7 @@ leaderBoard.addEventListener("load", function (e) {
   });
 });
 
-function myFunction() {
+function searchName() {
   // Declare variables
   var input, filter, table, data, i, txtValue;
   inputText = document.getElementById("myInput");
