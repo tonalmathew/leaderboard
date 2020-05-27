@@ -59,12 +59,12 @@ body{
 
 .search-input{
   position: relative;
-  left: 500px;
+  left: 450px;
 }
 
 .search-item{
   position: relative;
-  left: 505px;
+  left: 455px;
   border-radius: 50%;
   width: 35px;
   height: 35px;
