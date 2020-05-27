@@ -1,4 +1,5 @@
-var url = "http://gsx2json.com/api?id=1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0&sheet=1";
+var url =
+  "http://gsx2json.com/api?id=1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0&sheet=1";
 
 // AJAX Request
 var leaderBoard = new XMLHttpRequest();
@@ -12,17 +13,33 @@ leaderBoard.addEventListener("load", function (e) {
 
   resultsData.forEach((result) => {
     console.log(result);
-    $(".table-content").append(
-      `<div class="col-lg-2 col-sm-2 col-md-2 col-xl-2">
-        ${result.rank}
-      </div>
-      <div class="col-lg-7 col-sm-7 col-md-7 col-xl-7">
-        ${result.name}
-      </div>
-      <div class="col-lg-3 col-sm-3 col-md-3 col-xl-3">
-        ${result.points}
-      </div>`
-    );
+    $("#myTable").append(`<tr class="data">
+            <td>${result.rank}</td>
+            <td>${result.name}</td>
+              <td>${result.points}</td>
+          </tr>`);
   });
 });
 
+function myFunction() {
+  // Declare variables
+  var input, filter, table, data, i, txtValue;
+  inputText = document.getElementById("myInput");
+  filter = inputText.value.toUpperCase();
+  table = document.getElementById("myTable");
+
+  let rowData = table.getElementsByTagName("tr"); // selects all elemnts with tag tr
+
+  // Loop through all table rows [inside a node list], and hide those who don't match the search query
+  for (i = 0; i < rowData.length; i++) {
+    data = rowData[i].getElementsByTagName("td")[1];
+    if (data) {
+      txtValue = data.textContent || data.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        rowData[i].style.display = "";
+      } else {
+        rowData[i].style.display = "none";
+      }
+    }
+  }
+}

@@ -15,28 +15,34 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <script src="https://kit.fontawesome.com/0ad26dfd7a.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/0ad26dfd7a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
   </head>
   <body>
     <div class="main">
-        <div class="card">
-            <div class="card-title">
-                <strong>Leaderboard</strong>
-            </div>
-            <form class="form-inline ">
-                <input type="text" class="form-control search-input" placeholder="Search" aria-label="Search">
-                <button class="fas fa-search search-item" aria-hidden="true"></button>
-              </form>
-            <div class="card-content">
-                <div class="container">
-                    <div class="row table-content">
-
-                    </div>
-                </div>
-            </div>
+      <div class="card">
+        <div class="card-title">
+          <strong>Leaderboard</strong>
         </div>
+        <input
+          type="text"
+          id="myInput"
+          onkeyup="myFunction()"
+          placeholder="Search for names.."
+        />
+
+        <table id="myTable">
+          <tr class="header">
+            <th style="width: 60%;">Rank</th>
+            <th style="width: 40%;">Name</th>
+            <th style="width: 40%;">Points</th>
+          </tr>
+        </table>
+      </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="app.js"></script>
   </body>
 </html>
