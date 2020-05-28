@@ -1,5 +1,5 @@
 var url =
-  "http://gsx2json.com/api?id=1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0&sheet=1";
+  "https://spreadsheets.google.com/feeds/cells/1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0/1/public/values?alt=json";
 
 // AJAX Request
 var leaderBoard = new XMLHttpRequest();
@@ -9,16 +9,23 @@ leaderBoard.send();
 leaderBoard.addEventListener("load", function (e) {
   var data = e.target.response;
   var response = JSON.parse(data);
-  let resultsData = response.rows;
-
-  resultsData.forEach((result) => {
-    console.log(result);
-    $("#myTable").append(`<tr class="data">
-            <td>${result.rank}</td>
-            <td>${result.name}</td>
-              <td>${result.points}</td>
-          </tr>`);
-  });
+  let resultsData = response.feed.entry;
+  console.log(resultsData);
+  for (var i = 3; i < resultsData.length; i = i + 3) {
+    var container = document.querySelector("#myTable");
+    container.innerHTML +=
+      '<tr class="data">' +
+      "<td>" +
+      resultsData[i].content.$t +
+      "</td>" +
+      "<td>" +
+      resultsData[i + 1].content.$t +
+      "</td>" +
+      "<td>" +
+      resultsData[i + 2].content.$t +
+      "</td>" +
+      "</tr>";
+  }
 });
 
 function searchName() {
@@ -43,3 +50,6 @@ function searchName() {
     }
   }
 }
+
+// var url =
+//   "http://gsx2json.com/api?id=1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0&sheet=1";
