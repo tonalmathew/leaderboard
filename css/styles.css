@@ -144,6 +144,19 @@ button {
 }
 
 @media (max-width: 505px) {
+  #myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 90%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px;
+    /* Increase font-size */
+  }
+  .card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 505px) {
   .event-name {
     font-size: 40px;
   }
