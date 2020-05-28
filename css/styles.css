@@ -33,7 +33,7 @@ body {
   flex-direction: column; */
   justify-content: center;
   max-width: 100%;
-  border: px solid #4990e2;
+
   padding: 24px;
   margin: 50px auto;
 }
@@ -130,13 +130,13 @@ body {
   color: white;
 }
 
-.search-icon{
+.search-icon {
   position: absolute;
   left: 40px;
 }
 
-.input-cont{
-  padding-left: 40px!important;
+.input-cont {
+  padding-left: 40px !important;
 }
 
 button {
