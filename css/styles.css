@@ -29,11 +29,8 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 10px;
-  /* display: flex;
-  flex-direction: column; */
   justify-content: center;
   max-width: 100%;
-
   padding: 24px;
   margin: 50px auto;
 }
@@ -141,19 +138,6 @@ body {
 
 button {
   border-radius: 50%;
-}
-
-@media (max-width: 394px) {
-  #myTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 80%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px;
-    /* Increase font-size */
-  }
-  .card {
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 505px) {
