@@ -1,5 +1,6 @@
-var url =
-  "http://gsx2json.com/api?id=1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0&sheet=1";
+// var url =
+//   "http://gsx2json.com/api?id=1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0&sheet=1";
+var url = "https://spreadsheets.google.com/feeds/cells/1jFYXinwU3a-9-w_PlVIn6IBoSGn1d7cMJZr7L2KUJp0/1/public/values?alt=json";
 
 // AJAX Request
 var leaderBoard = new XMLHttpRequest();
@@ -9,16 +10,41 @@ leaderBoard.send();
 leaderBoard.addEventListener("load", function (e) {
   var data = e.target.response;
   var response = JSON.parse(data);
-  let resultsData = response.rows;
+  let resultsData = response.feed.entry;
 
-  resultsData.forEach((result) => {
-    console.log(result);
-    $("#myTable").append(`<tr class="data">
-            <td>${result.rank}</td>
-            <td>${result.name}</td>
-              <td>${result.points}</td>
-          </tr>`);
-  });
+  for(var i =3; i<resultsData.length; i=i+3){
+    var container = document.querySelector("#myTable");
+    container.innerHTML +=  '<tr class="data">' +
+                              '<td>' + resultsData[i].content.$t +'</td>' +
+                              '<td>' + resultsData[i+1].content.$t +'</td>' +
+                              '<td>' + resultsData[i+2].content.$t +'</td>' +
+                            '</tr>'
+                            // '<div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 cont">'
+                            //   + resultsData[i].content.$t +
+                            // '</div>' +
+                            // '<div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 cont">'
+                            //   + resultsData[i+1].content.$t +
+                            // '</div>' +
+                            // '<div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 cont">'
+                            //   + resultsData[i+2].content.$t +
+                            // '</div>' 
+  }
+
+  // resultsData.forEach((result) => {
+  //   console.log(result);
+  //   $("#myTable").append(
+
+  //     `<div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 cont">
+  //       ${result.content.$t}
+  //     </div>`
+
+  //         // `<tr class="data">
+  //         //   <td>${result.content.$t}</td>
+  //         //   <td>${result.name}</td>
+  //         //   <td>${result.points}</td>
+  //         // </tr>`
+  //         );
+  // });
 });
 
 function searchName() {
