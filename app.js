@@ -10,9 +10,10 @@ leaderBoard.addEventListener("load", function (e) {
   var data = e.target.response;
   var response = JSON.parse(data);
   let resultsData = response.feed.entry;
-  console.log(resultsData);
+
   for (var i = 3; i < resultsData.length; i = i + 3) {
     var container = document.querySelector("#myTable");
+    if (resultsData[i].content.$t == null) resultsData[i].content.$t = 0;
     container.innerHTML +=
       '<tr class="data">' +
       "<td>" +
@@ -26,6 +27,8 @@ leaderBoard.addEventListener("load", function (e) {
       "</td>" +
       "</tr>";
   }
+
+  
 });
 
 function searchName() {

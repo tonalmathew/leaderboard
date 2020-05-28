@@ -1,9 +1,27 @@
-body{
-  background-color: #4542f5!important;
+body {
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-weight: bold;
+  animation: myanimation 10s infinite;
 }
 
-.main {
-  display: flex;
+@keyframes myanimation {
+  0% {
+    background-color: #ffdf5a;
+  }
+  25% {
+    background-color: rgb(50, 160, 233);
+  }
+  50% {
+    background-color: #f76b8a;
+  }
+  75% {
+    background-color: brown;
+  }
+  100% {
+    background-color: rgb(192, 100, 100);
+  }
 }
 
 /* Simple Card */
@@ -11,11 +29,10 @@ body{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   justify-content: center;
-  width: 800px;
-
+  max-width: 100%;
   border: px solid #4990e2;
   padding: 24px;
   margin: 50px auto;
@@ -30,10 +47,14 @@ body{
   letter-spacing: 3;
   color: grey;
 }
-.cont{
-  padding: 10px!important;  
-}
 
+.event-name {
+  text-align: center;
+  font-size: 60px;
+  color: #ffa300;
+  font-family: Poppins;
+  font-weight: 900;
+}
 .card-content {
   margin-top: 30px;
   font-size: 20px;
@@ -54,33 +75,36 @@ body{
 
 /* table */
 
+.form-inline {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+}
+
 #myInput {
-  background-image: url("/css/searchicon.png"); /* Add a search icon to input */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 100%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 12px; /* Add some space below the input */
+  width: 100%;
+  border-radius: 50px;
 }
 
 #myTable {
   border-collapse: collapse; /* Collapse borders */
   width: 100%; /* Full-width */
   border: 1px solid #ddd; /* Add a grey border */
-  font-size: 18px; /* Increase font-size */
+  font-size: 18px;
+  /* Increase font-size */
 }
 
 #myTable th,
 #myTable td {
   text-align: left; /* Left-align text */
-  padding: 12px; /* Add padding */
+  padding: 12px;
+  font-family: Poppins; /* Add padding */
 }
 
 #myTable tr {
   /* Add a bottom border to all table rows */
   border-bottom: 1px solid #ddd;
+  font-family: Poppins;
 }
 
 #myTable tr.header,
@@ -89,12 +113,12 @@ body{
   background-color: #f1f1f1;
 }
 
-.search-input{
+.search-input {
   position: relative;
   left: 450px;
 }
 
-.search-item{
+.search-item {
   position: relative;
   left: 455px;
   border-radius: 50%;
@@ -105,6 +129,25 @@ body{
   color: white;
 }
 
-button{
+button {
   border-radius: 50%;
+}
+
+@media (max-width: 505px) {
+  .event-name {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 365px) {
+  #myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px;
+    /* Increase font-size */
+  }
+  .card {
+    max-width: 100%;
+  }
 }
