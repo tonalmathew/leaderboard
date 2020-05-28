@@ -89,7 +89,7 @@ body {
 
 #myTable {
   border-collapse: collapse; /* Collapse borders */
-  width: 100%; /* Full-width */
+  width: inherit; /* Full-width */
   border: 1px solid #ddd; /* Add a grey border */
   font-size: 18px;
   /* Increase font-size */
@@ -146,18 +146,5 @@ button {
 @media (max-width: 505px) {
   .event-name {
     font-size: 40px;
-  }
-}
-
-@media (max-width: 365px) {
-  #myTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px;
-    /* Increase font-size */
-  }
-  .card {
-    max-width: 100%;
   }
 }

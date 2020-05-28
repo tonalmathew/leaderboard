@@ -14,21 +14,18 @@ leaderBoard.addEventListener("load", function (e) {
   for (var i = 3; i < resultsData.length; i = i + 3) {
     var container = document.querySelector("#myTable");
     if (resultsData[i].content.$t == null) resultsData[i].content.$t = 0;
-    container.innerHTML +=
-      '<tr class="data">' +
-      "<td>" +
-      resultsData[i].content.$t +
-      "</td>" +
-      "<td>" +
-      resultsData[i + 1].content.$t +
-      "</td>" +
-      "<td>" +
-      resultsData[i + 2].content.$t +
-      "</td>" +
-      "</tr>";
+    container.innerHTML += `<tr class="data">
+      <td>
+     ${resultsData[i].content.$t}
+      </td>
+      <td>
+      ${resultsData[i + 1].content.$t} 
+      </td>
+      <td> 
+      ${resultsData[i + 2].content.$t}
+      </td> 
+      </tr>`;
   }
-
-  
 });
 
 function searchName() {
