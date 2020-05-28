@@ -129,6 +129,15 @@ body {
   color: white;
 }
 
+.search-icon{
+  position: absolute;
+  left: 40px;
+}
+
+.input-cont{
+  padding-left: 40px!important;
+}
+
 button {
   border-radius: 50%;
 }
